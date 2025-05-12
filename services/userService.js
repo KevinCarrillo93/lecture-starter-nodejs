@@ -1,14 +1,28 @@
 import { userRepository } from "../repositories/userRepository.js";
 
 class UserService {
-  // TODO: Implement methods to work with user
+  async create(userData) {
+    return await userRepository.create(userData);
+  }
 
-  search(search) {
-    const item = userRepository.getOne(search);
-    if (!item) {
-      return null;
-    }
-    return item;
+  async getById(id) {
+    return await userRepository.getOne({ id });
+  }
+
+  async getAll() {
+    return await userRepository.getAll();
+  }
+
+  async update(id, updateData) {
+    return await userRepository.update(id, updateData);
+  }
+
+  async delete(id) {
+    return await userRepository.delete(id);
+  }
+
+  async search(search) {
+    return await userRepository.getOne(search);
   }
 }
 
