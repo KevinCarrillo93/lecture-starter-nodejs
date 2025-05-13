@@ -5,7 +5,7 @@ const responseMiddleware = (req, res) => {
   }
 
   if (res.data !== undefined) {
-    const statusCode = res.statusCode || 200; 
+    const statusCode = res.statusCode || 200;
     return res.status(statusCode).json({ error: false, data: res.data });
   }
 
